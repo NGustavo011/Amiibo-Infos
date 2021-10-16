@@ -1,13 +1,35 @@
 import React from 'react';
 import * as S from './styled'
 import AmiiboCard from '../AmiiboCard';
+import useListCard from '../hooks/ListCardHooks';
 
 const AmiiboList = () => {
+
+    const {listCardState} = useListCard();
+    console.log(listCardState);
+
+    const items = listCardState.map(card => {
+        if(card.name){
+            return(
+                <S.Item>
+                    <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} />
+                </S.Item>
+                )
+        }
+        return null;
+    })
+
     return(
         <S.List>
-            <S.Item>
-                <AmiiboCard name="Zelda" serie="Super Smash Bros." img="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-000e0002.png" />
-            </S.Item>
+            {items}
+        </S.List>    
+    );
+}
+
+export default AmiiboList;
+
+/*
+
             <S.Item>
                 <AmiiboCard name="Toon Zelda - The Wind Waker" serie="The Legend of Zelda" img="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png" />
             </S.Item>
@@ -32,8 +54,4 @@ const AmiiboList = () => {
             <S.Item>
                 <AmiiboCard name="Zelda" serie="The Legend of Zelda" img="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03560902.png" />
             </S.Item>
-        </S.List>    
-    );
-}
-
-export default AmiiboList;
+*/

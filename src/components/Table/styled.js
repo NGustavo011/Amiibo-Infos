@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+`
+
 export const Table = styled.table`
     border: 2px solid #000;
     border-collapse: collapse;
+    width: 70%;
 `
 
 export const Row = styled.tr`

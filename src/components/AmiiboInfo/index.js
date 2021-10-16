@@ -18,13 +18,11 @@ const AmiiboInfo = () => {
     ])
 
     return(
-        <S.Wrapper>
-            
+        <S.Wrapper> 
             <S.WrapperDetail>
                 <S.ZoomImageWrapper>
-                <S.ZoomImage img="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03560902.png" zoomScale={2} width={400} height={400} />
+                    <S.ZoomImage img="https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03560902.png" zoomScale={2} width={350} height={350} />
                 </S.ZoomImageWrapper>
-                
                 <AmiiboExtraInfos character="Zelda" name="Zelda" serie="The Legend of Zelda" gameSeries="The Legend of Zelda" release={release}/>
             </S.WrapperDetail>
             <S.WrapperUsage>

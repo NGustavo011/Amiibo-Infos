@@ -3,7 +3,7 @@ import AmiiboRelease from '../AmiiboRelease';
 import List from '../List';
 import * as S from './styled'
 
-const AmiiboExtraInfos = ({ character, name, serie, gameSeries,  release }) => {
+const AmiiboExtraInfos = ({ character, name, serie, gameSeries, release }) => {
     return(
         <S.Wrapper>
             <S.TextTitle>Character</S.TextTitle> 
