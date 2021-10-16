@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SuperMarioBros from '../../assets/fonts/SuperMarioBros-ov7d.ttf'
 
 export const Card = styled.a`
     width: 20vw;
@@ -11,18 +12,37 @@ export const Card = styled.a`
     flex-direction: column;
     padding: 20px;
     margin: 20px;
+    margin-bottom: 35px;
     cursor: pointer;
     &:hover {
       background-color: #D2B48C;
       transition: 0.5s ease-out;
+      transform: scale(1.1);
     }
 `
 
 export const Name = styled.h3`
-    margin: 0px;
+    @font-face{
+    font-family: 'SuperMarioBros';
+        src: url(${SuperMarioBros});
+    }
+    text-align: center;
+    font: 400 1rem 'SuperMarioBros', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e60012;
+    margin: 0px 0px 10px 0px;
 `
 
 export const Serie = styled.h4`
+    @font-face{
+    font-family: 'SuperMarioBros';
+        src: url(${SuperMarioBros});
+    }
+
+    font: 400 1rem 'SuperMarioBros', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
     margin: 0px 0px 20px 0px;
 `
 
