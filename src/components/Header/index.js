@@ -17,6 +17,7 @@ const Header = () =>{
                     aria-labelledby="aria-label"
                     inputId="aria-example-input"
                     name="aria-live-color"
+                    placeholder="Enter the desired character name"
                     options={[{label:"Zelda", value:"Zelda"},{ label:"Link", value:"Link"}]}
                 />
                 <S.ButtonAmiibo>

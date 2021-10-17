@@ -50,7 +50,7 @@ export const SelectAmiibo = styled(Select)`
 
 export const ButtonAmiibo = styled.button`
     width: 100px;
-    padding: 5px;
+    padding: 7px 5px;
     background-color: #000;
     border: 3px solid #e60012;
     border-radius: 10%;

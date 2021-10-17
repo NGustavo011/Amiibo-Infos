@@ -1,32 +1,25 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useCallback, useEffect, useState } from 'react';
+import api from '../services/api'
 
 export const ListCardContext = createContext({
     list: []
 })
 
 const ListCardProvider = ({ children }) =>{
-    const [ listCardState, setListCardState ] = useState([
-        {
-            name: "Toon Zelda - The Wind Waker",
-            amiiboSeries: "The Legend of Zelda",
-            image: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png"
-        },
-        {
-            name: "Toon Zelda - The Wind Waker",
-            amiiboSeries: "The Legend of Zelda",
-            image: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png"
-        },
-        {
-            name: "Toon Zelda - The Wind Waker",
-            amiiboSeries: "The Legend of Zelda",
-            image: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png"
-        },
-        {
-            name: "Toon Zelda - The Wind Waker",
-            amiiboSeries: "The Legend of Zelda",
-            image: "https://raw.githubusercontent.com/N3evin/AmiiboAPI/master/images/icon_01010000-03520902.png"
-        },
-    ]);
+    const [ isLoading, setIsLoading] = useState(true);
+    const [ listCardState, setListCardState ] = useState([]);
+
+    const getAllAmiibo = () =>{
+        console.log("oi");
+        api.get(`amiibo`).then(({ data:{amiibo} }) =>{
+            setListCardState(amiibo);
+        })
+        console.log("oi - " + listCardState);
+    }
+
+    useEffect(()=>{
+        getAllAmiibo();
+    }, []);
 
     const contextValue={
         listCardState,

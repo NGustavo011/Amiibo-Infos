@@ -4,7 +4,7 @@ import SuperMarioBros from '../../assets/fonts/SuperMarioBros-ov7d.ttf'
 export const Card = styled.a`
     width: 20vw;
     max-width: 20vw;
-    height: 65vh;
+    height: 75vh;
     overflow: hidden;
     box-shadow: 0px 0px 20px 0px;
     display: flex;

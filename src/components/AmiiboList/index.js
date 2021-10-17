@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as S from './styled'
 import AmiiboCard from '../AmiiboCard';
-import useListCard from '../hooks/ListCardHooks';
+import useListCard from '../../hooks/ListCardHooks';
 
 const AmiiboList = () => {
 
-    const {listCardState} = useListCard();
-    console.log(listCardState);
+    const {listCardState, getAllAmiibos} = useListCard();
 
     const items = listCardState.map(card => {
         if(card.name){

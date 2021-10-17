@@ -10,7 +10,7 @@ function App() {
       <ListCardProvider>
         <Layout>
           <div>
-            <AmiiboInfo />
+            <AmiiboList />
           </div>
         </Layout>
       </ListCardProvider>
