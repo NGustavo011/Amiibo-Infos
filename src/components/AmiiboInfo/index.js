@@ -48,7 +48,7 @@ const AmiiboInfo = () => {
         <S.Wrapper>
             <S.WrapperDetail>
                 <S.ZoomImageWrapper>
-                    <S.ZoomImage img={amiiboInfoGeneral.image} zoomScale={2} width={350} height={350} />
+                    <S.ZoomImage img={amiiboInfoGeneral.image} zoomScale={2} width={450} height={350} />
                 </S.ZoomImageWrapper>
                 <AmiiboExtraInfos character={amiiboInfoGeneral.character} name={amiiboInfoGeneral.name} serie= {amiiboInfoGeneral.amiiboSeries} gameSeries={amiiboInfoGeneral.gameSeries} release={amiiboInfoGeneral.release}/>
             </S.WrapperDetail>

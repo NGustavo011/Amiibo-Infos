@@ -19,7 +19,7 @@ export const Card = styled.a`
     flex-direction: column;
     padding: 20px;
     margin: 20px;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
     cursor: pointer;
     &:hover {
       background-color: #D2B48C;
