@@ -8,12 +8,27 @@ export const ListCardContext = createContext({
 const ListCardProvider = ({ children }) =>{
     const [ isLoading, setIsLoading] = useState(true);
     const [ listCardState, setListCardState ] = useState([]);
+    const [ listOriginalCardState, setListOriginalCardState ] = useState([]);
     const [ listNameState, setListNameState ] = useState([]);
+    const [ infosFirstLoading, setInfosFirstLoading ] = useState(false);
 
-    const getAllAmiibo = () =>{
-        api.get(`amiibo`).then(({ data:{amiibo} }) =>{
+    const getAllAmiibo = async () =>{
+        await api.get(`amiibo`).then(({ data:{amiibo} }) =>{
+            setListCardState(amiibo);
+            setListOriginalCardState(amiibo);
+        })
+        setInfosFirstLoading(true);
+    }
+
+    const getAmiibo = async(name) =>{
+        console.log(name);
+        await api.get(`amiibo/?character=${name}`).then(({ data:{amiibo} }) =>{
             setListCardState(amiibo);
         })
+    }
+
+    const goHome = () =>{
+        setListCardState(listOriginalCardState);
     }
 
     useEffect(()=>{
@@ -22,15 +37,17 @@ const ListCardProvider = ({ children }) =>{
 
     useEffect(()=>{
         setListNameState(listCardState.map((card)=>{
-            return {label: card.name, value: card.name};
+            return {label: card.character, value: card.character};
         }));
         setIsLoading(false);
-    }, [listCardState]);
+    }, [infosFirstLoading]);
 
     const contextValue={
         listCardState,
         isLoading,
         listNameState,
+        getAmiibo,
+        goHome
     };
 
     return <ListCardContext.Provider value={contextValue}>{children}</ListCardContext.Provider>
