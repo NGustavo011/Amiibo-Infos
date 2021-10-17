@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import api from '../services/api'
 
 export const AmiiboInfoContext = createContext({
@@ -16,6 +16,7 @@ const AmiiboInfoProvider = ({ children }) =>{
     }
 
     const contextValue={
+        actualAmiiboUse,
         getAmiiboUse
     };
 

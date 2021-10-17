@@ -1,5 +1,10 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
 import SuperMarioBros from '../../assets/fonts/SuperMarioBros-ov7d.ttf'
+
+export const LinkCard = styled(Link)`
+    text-decoration: none;
+`
 
 export const Card = styled.a`
     color: black;
