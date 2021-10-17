@@ -8,11 +8,10 @@ const AmiiboUsage = ({usage}) => {
                 <S.Row>
                     <S.Value key={`gameName${key}`}>{item["gameName"].toUpperCase()}</S.Value> 
                     <S.Value key={`Usage${key}`}>{item["Usage"]}</S.Value>
+                    <S.Value key={`console${key}`}>{item["console"]}</S.Value> 
                 </S.Row>
             )
     })
-
-    console.log(generalUsage);
 
     return(
         <>

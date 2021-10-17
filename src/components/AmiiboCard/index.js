@@ -5,7 +5,11 @@ import * as S from './styled'
 const AmiiboCard = ({name, serie, img, headKey, data}) => {
 
     return(
-        <S.LinkCard to={{pathname:`detail/${headKey}`, state: {data: data}}} >
+        <S.LinkCard to={{pathname:`detail/${headKey}`, state: {data: data}}} onClick={()=>window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+           })}>
             <S.Card>   
                 <S.Name>{name}</S.Name>
                 <S.Serie>{serie.toUpperCase()}</S.Serie>

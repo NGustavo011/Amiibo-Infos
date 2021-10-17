@@ -6,29 +6,46 @@ import AmiiboUsage from '../AmiiboUsage';
 import * as S from './styled';
 
 import useAmiiboInfo from '../../hooks/AmiiboInfoHooks';
+import { set } from 'react-hook-form';
 
 const AmiiboInfo = () => {
     const {state} = useLocation();
     const amiiboInfoGeneral = state.data;
+    const {actualAmiiboUse, getAmiiboUse} = useAmiiboInfo();
     const {key} = useParams();
-    const [release, setRelease] = useState({"au": "2014-12-12", "eu": "2014-12-19", "jp": "2014-12-06", "na": "2014-12-14"});
-    const [usage, setUsage] = useState([
-        {
-            "gameName": "Ace Combat Assault Horizon Legacy+",
-            "Usage": "Unlock character-themed aircraft early"
-        },
-        {
-            "gameName": "Chibi-Robo! Zip Lash",
-            "Usage": "Unlock figure in the pose of the character (requires Chibi-Robo amiibo)"
-        },
-    ])  
-    
+    const [usageAux, setUsageAux] = useState();
+    const [usage, setUsage] = useState([]);
+       
     useEffect(()=>{
-        console.log(amiiboInfoGeneral)
-    },[])
+        getAmiiboUse(key);
+    }, [])
+
+    useEffect(()=>{
+        let amiibosUsageAux = [];
+
+        if(actualAmiiboUse){
+            actualAmiiboUse.map((amiibo)=>{
+                amiibo.games3DS.map((game)=>{
+                    amiibosUsageAux.push({"console": "Nintendo 3DS", "gameName": game.gameName, "Usage":game.amiiboUsage[0].Usage});
+                });
+                amiibo.gamesWiiU.map((game)=>{
+                    amiibosUsageAux.push({"console": "Wii U", "gameName": game.gameName, "Usage":game.amiiboUsage[0].Usage});
+                });
+                amiibo.gamesSwitch.map((game)=>{
+                    amiibosUsageAux.push({"console": "Nintendo Switch", "gameName": game.gameName, "Usage":game.amiiboUsage[0].Usage});
+                });
+            });
+            amiibosUsageAux = amiibosUsageAux.filter((thing, index, self) =>
+                index === self.findIndex((t) => (
+                    t.console === thing.console && t.gameName === thing.gameName && t.Usage === thing.Usage
+                ))
+            )
+            setUsage(amiibosUsageAux.sort((a,b) => (a.gameName > b.gameName) ? 1 : ((b.gameName > a.gameName) ? -1 : 0)))
+        }
+    }, [actualAmiiboUse])
 
     return(
-        <S.Wrapper> 
+        <S.Wrapper>
             <S.WrapperDetail>
                 <S.ZoomImageWrapper>
                     <S.ZoomImage img={amiiboInfoGeneral.image} zoomScale={2} width={350} height={350} />
@@ -37,9 +54,13 @@ const AmiiboInfo = () => {
             </S.WrapperDetail>
             <S.WrapperUsage>
                 <S.Text>USE IN GAMES</S.Text>
-                <Table>
-                    <AmiiboUsage usage={usage}/>
-                </Table>
+                {usage.length>0?
+                    <Table>
+                        <AmiiboUsage usage={usage}/>
+                    </Table>
+                    :
+                    <S.NoUse>Amiibo has no use</S.NoUse>
+                }
              </S.WrapperUsage>
         </S.Wrapper>
     );

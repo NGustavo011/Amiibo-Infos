@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import api from '../services/api'
 
 export const ListCardContext = createContext({
@@ -21,8 +21,8 @@ const ListCardProvider = ({ children }) =>{
     }
 
     const getAmiibo = async(name) =>{
-        console.log(name);
         await api.get(`amiibo/?character=${name}`).then(({ data:{amiibo} }) =>{
+            console.log(amiibo);
             setListCardState(amiibo);
         })
     }

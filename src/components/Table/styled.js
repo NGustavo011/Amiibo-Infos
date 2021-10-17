@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
+    margin: 20px 0px 40px 0px;
 `
 
 export const Table = styled.table`
@@ -20,6 +20,6 @@ export const Title = styled.th`
     border: 2px solid #000;
     background-color: #000;
     color: #e60012;
-    width: 50%;
+    width: 33%;
     padding: 15px;
 `

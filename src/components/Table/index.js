@@ -6,8 +6,9 @@ const Table = ({ children }) => {
         <S.Wrapper>
             <S.Table>
                 <S.Row>
-                    <S.Title>Game</S.Title>
-                    <S.Title>Usage</S.Title>
+                    <S.Title>GAME</S.Title>
+                    <S.Title>USAGE</S.Title>
+                    <S.Title>CONSOLE</S.Title>
                 </S.Row>
                 {children}
             </S.Table>

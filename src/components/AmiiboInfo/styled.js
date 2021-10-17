@@ -28,7 +28,13 @@ export const WrapperUsage = styled.div`
 
 export const Text = styled.small`
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 80px;
     text-align: center;
     font-size: 30px;
+`
+
+export const NoUse = styled.small`
+    margin: 30px 0px 40px 0px;
+    text-align: center;
+    font-size: 22px;
 `

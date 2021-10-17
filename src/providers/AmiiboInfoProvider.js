@@ -9,15 +9,16 @@ const AmiiboInfoProvider = ({ children }) =>{
     const [actualAmiiboUse, setActualAmiiboUse] = useState();
 
     const getAmiiboUse = async(key) =>{
-        console.log(key);
         await api.get(`amiibo/?character=${key}&showusage`).then(({ data:{amiibo} }) =>{
-            setActualAmiiboUse(amiibo);
+            setActualAmiiboUse(amiibo.map((am)=>{
+                return am;
+            }));
         })
     }
 
     const contextValue={
         actualAmiiboUse,
-        getAmiiboUse
+        getAmiiboUse,
     };
 
     return <AmiiboInfoContext.Provider value={contextValue}>{children}</AmiiboInfoContext.Provider>
