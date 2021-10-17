@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styled';
 import logo from '../../assets/images/AmiiboLogo.png'
+import useListCard from '../../hooks/ListCardHooks';
 
 const Header = () =>{
+    const {listNameState} = useListCard();
 
   return (
       <S.Wrapper>
@@ -18,7 +20,9 @@ const Header = () =>{
                     inputId="aria-example-input"
                     name="aria-live-color"
                     placeholder="Enter the desired character name"
-                    options={[{label:"Zelda", value:"Zelda"},{ label:"Link", value:"Link"}]}
+                    options={
+                        listNameState.sort((a,b) => (a.label > b.label) ? 1 : ((b.label > a.label) ? -1 : 0)).filter((v,i,a)=>a.findIndex(t=>(t.label === v.label))===i)
+                    }
                 />
                 <S.ButtonAmiibo>
                     <S.SearchIcon className="fas fa-search" />

@@ -8,21 +8,29 @@ export const ListCardContext = createContext({
 const ListCardProvider = ({ children }) =>{
     const [ isLoading, setIsLoading] = useState(true);
     const [ listCardState, setListCardState ] = useState([]);
+    const [ listNameState, setListNameState ] = useState([]);
 
     const getAllAmiibo = () =>{
-        console.log("oi");
         api.get(`amiibo`).then(({ data:{amiibo} }) =>{
             setListCardState(amiibo);
         })
-        console.log("oi - " + listCardState);
     }
 
     useEffect(()=>{
-        getAllAmiibo();
+        getAllAmiibo(); 
     }, []);
+
+    useEffect(()=>{
+        setListNameState(listCardState.map((card)=>{
+            return {label: card.name, value: card.name};
+        }));
+        setIsLoading(false);
+    }, [listCardState]);
 
     const contextValue={
         listCardState,
+        isLoading,
+        listNameState,
     };
 
     return <ListCardContext.Provider value={contextValue}>{children}</ListCardContext.Provider>
