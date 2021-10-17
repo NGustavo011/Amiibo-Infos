@@ -1,26 +1,27 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import * as S from './styled';
 import logo from '../../assets/images/AmiiboLogo.png';
 import useListCard from '../../hooks/ListCardHooks';
+import { useHistory } from 'react-router-dom'; 
 
 const Header = () =>{
     const {listNameState, getAmiibo, goHome} = useListCard();
     const [ optionValue, setOptionValue ] = useState();
     const selectInputRef = useRef();
-
-    const onSubmit = (e) =>{
-        e.preventDefault();
-        getAmiibo(optionValue);
-    }
-
-    const backToHome = () =>{
-        selectInputRef.current.setValue({label: null, value: null});
-        goHome();
-    }
+    let history = useHistory();
     
-    useEffect(()=>{
-        console.log(optionValue);
-    }, [optionValue]);
+
+    const onSubmit = async (e) =>{
+        e.preventDefault();
+        await getAmiibo(optionValue);
+        history.push("/");
+    }
+
+    const backToHome = async () =>{
+        selectInputRef.current.setValue({label: null, value: null});
+        await goHome();
+        history.push("/");        
+    }
 
   return (
       <S.Wrapper>

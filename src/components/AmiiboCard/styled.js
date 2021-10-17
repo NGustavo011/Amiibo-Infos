@@ -2,6 +2,8 @@ import styled from "styled-components";
 import SuperMarioBros from '../../assets/fonts/SuperMarioBros-ov7d.ttf'
 
 export const Card = styled.a`
+    color: black;
+    text-decoration: none;
     width: 20vw;
     max-width: 20vw;
     height: 75vh;

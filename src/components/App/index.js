@@ -1,18 +1,12 @@
 import React from 'react';
-import Layout from '../Layout';
-import AmiiboList from '../AmiiboList';
-import AmiiboInfo from '../AmiiboInfo';
 import ListCardProvider from '../../providers/ListCardProvider'
+import Routes from '../../routes';
 
 function App() {
   return (
     <main>
       <ListCardProvider>
-        <Layout>
-          <div>
-            <AmiiboList />
-          </div>
-        </Layout>
+        <Routes />
       </ListCardProvider>
     </main>
   );

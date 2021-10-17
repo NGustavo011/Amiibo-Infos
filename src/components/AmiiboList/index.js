@@ -14,7 +14,7 @@ const AmiiboList = () => {
             if(card.name){
                 return(
                     <S.Item>
-                        <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} />
+                        <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} headKey={`0x${card.head.substring(0,4)}`} data={card} />
                     </S.Item>
                     )
             }
