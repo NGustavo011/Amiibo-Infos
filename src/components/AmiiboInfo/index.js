@@ -6,14 +6,12 @@ import AmiiboUsage from '../AmiiboUsage';
 import * as S from './styled';
 
 import useAmiiboInfo from '../../hooks/AmiiboInfoHooks';
-import { set } from 'react-hook-form';
 
 const AmiiboInfo = () => {
     const {state} = useLocation();
     const amiiboInfoGeneral = state.data;
     const {actualAmiiboUse, getAmiiboUse} = useAmiiboInfo();
     const {key} = useParams();
-    const [usageAux, setUsageAux] = useState();
     const [usage, setUsage] = useState([]);
        
     useEffect(()=>{
