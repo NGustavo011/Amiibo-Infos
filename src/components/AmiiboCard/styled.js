@@ -9,9 +9,8 @@ export const LinkCard = styled(Link)`
 export const Card = styled.a`
     color: black;
     text-decoration: none;
-    width: 20vw;
-    max-width: 20vw;
-    height: 75vh;
+    width: 17vw;
+    height: 500px;
     overflow: hidden;
     box-shadow: 0px 0px 20px 0px;
     display: flex;
