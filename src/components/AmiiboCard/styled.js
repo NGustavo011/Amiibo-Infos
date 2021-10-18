@@ -26,6 +26,8 @@ export const Card = styled.a`
       transition: 0.5s ease-out;
       transform: scale(1.1);
     }
+    transition: 0.5s ease-out;
+    transform: scale(1.0);
 `
 
 export const Name = styled.h3`
