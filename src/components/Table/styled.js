@@ -12,6 +12,9 @@ export const Table = styled.table`
     width: 70%;
 `
 
+export const Body = styled.tbody`
+`
+
 export const Row = styled.tr`
     border: 2px solid #000;
 `

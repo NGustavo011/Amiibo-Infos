@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styled'
 
-const AmiiboUsage = ({usage, amiiboId}) => {
+const AmiiboUsage = ({usage, amiiboId, name}) => {
+    const [generalUsage, setGeneralUsage] = useState([]);
+    useEffect(()=>{
+        setGeneralUsage(usage.map((item, key)=>{
+            return (
+                    <S.Row key={`${amiiboId}-${key}`}>
+                        <S.Value>{item["gameName"].toUpperCase()}</S.Value> 
+                        <S.Value>{item["Usage"]}</S.Value>
+                        <S.Value>{item["console"]}</S.Value> 
+                    </S.Row>
+                )
+        }));
+    }, [])
     
-    const generalUsage = usage.map((item, key)=>{
-        return (
-                <S.Row>
-                    <S.Value key={`${amiiboId}-gameName-${key}`}>{item["gameName"].toUpperCase()}</S.Value> 
-                    <S.Value key={`${amiiboId}-Usage-${key}`}>{item["Usage"]}</S.Value>
-                    <S.Value key={`${amiiboId}-console-${key}`}>{item["console"]}</S.Value> 
-                </S.Row>
-            )
-    })
 
     return(
         <>

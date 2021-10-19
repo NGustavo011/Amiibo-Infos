@@ -14,9 +14,9 @@ const AmiiboList = () => {
         if(!listCardState.length)
             return null;
 
-        setItems(listCardState.map(card => {
+        setItems(listCardState.map((card, index) => {
             return(
-                <S.Item>
+                <S.Item key={`0x${card.head.substring(0,4)}-${card.name}-${index}`}>
                     <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} headKey={`0x${card.head.substring(0,4)}`} data={card} />
                 </S.Item>
                 )

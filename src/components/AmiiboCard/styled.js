@@ -6,7 +6,7 @@ export const LinkCard = styled(Link)`
     text-decoration: none;
 `
 
-export const Card = styled.a`
+export const Card = styled.div`
     color: black;
     text-decoration: none;
     width: 17vw;

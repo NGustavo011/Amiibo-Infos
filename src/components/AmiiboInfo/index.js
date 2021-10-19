@@ -14,14 +14,15 @@ const AmiiboInfo = () => {
     const {key} = useParams();
     const [ isLoading, setIsLoading ] = useState(true);
 
-    console.log("Entrei??")
-    console.log(isLoading);
-
     useEffect(()=>{
-        (async ()=>{
+        (
+        async ()=>{
             await getAmiiboUse(key);
             setIsLoading(false);
         })() 
+        return () => {
+            setIsLoading(false); // This worked for me
+          };
     }, [getAmiiboUse, key]);
 
     return(
@@ -36,7 +37,7 @@ const AmiiboInfo = () => {
                 <S.Text>USE IN GAMES</S.Text>
                 {!isLoading?
                     <Table>
-                        <AmiiboUsage usage={actualAmiiboUse} amiiboId={key} />
+                        <AmiiboUsage usage={actualAmiiboUse} amiiboId={key} name={amiiboInfoGeneral.name} />
                     </Table>
                     :
                     <S.WrapperLoading>

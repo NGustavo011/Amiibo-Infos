@@ -18,7 +18,7 @@ const Header = () =>{
     }
 
     const backToHome = async () =>{
-        selectInputRef.current.setValue({label: null, value: null});
+        selectInputRef.current.setValue({label: "", value: ""});
         await goHome();
         history.push("/");        
     }

@@ -21,7 +21,6 @@ const ListCardProvider = ({ children }) =>{
 
     const getAmiibo = async(name) =>{
         await api.get(`amiibo/?character=${name}`).then(({ data:{amiibo} }) =>{
-            console.log(amiibo);
             setListCardState(amiibo);
         })
     }
