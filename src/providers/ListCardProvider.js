@@ -6,7 +6,6 @@ export const ListCardContext = createContext({
 })
 
 const ListCardProvider = ({ children }) =>{
-    const [ isLoading, setIsLoading] = useState(true);
     const [ listCardState, setListCardState ] = useState([]);
     const [ listOriginalCardState, setListOriginalCardState ] = useState([]);
     const [ listNameState, setListNameState ] = useState([]);
@@ -39,12 +38,10 @@ const ListCardProvider = ({ children }) =>{
         setListNameState(listCardState.map((card)=>{
             return {label: card.character, value: card.character};
         }));
-        setIsLoading(false);
     }, [infosFirstLoading]);
 
     const contextValue={
         listCardState,
-        isLoading,
         listNameState,
         getAmiibo,
         goHome

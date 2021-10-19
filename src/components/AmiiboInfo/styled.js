@@ -38,3 +38,8 @@ export const NoUse = styled.small`
     text-align: center;
     font-size: 22px;
 `
+
+export const WrapperLoading = styled.div`
+    display: flex;
+    justify-content: center;
+`

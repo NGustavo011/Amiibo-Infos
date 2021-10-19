@@ -6,23 +6,24 @@ import ReactLoading from 'react-loading';
 
 const AmiiboList = () => {
 
-    const {listCardState, isLoading} = useListCard();
+    const { listCardState } = useListCard();
     const [ items, setItems ] = useState([]);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     useEffect(()=>{
-        setItems(listCardState.map(card => {
-            if(card.name){
-                return(
-                    <S.Item>
-                        <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} headKey={`0x${card.head.substring(0,4)}`} data={card} />
-                    </S.Item>
-                    )
-            }
+        if(!listCardState.length)
             return null;
+
+        setItems(listCardState.map(card => {
+            return(
+                <S.Item>
+                    <AmiiboCard name={card.name} serie={card.amiiboSeries} img={card.image} headKey={`0x${card.head.substring(0,4)}`} data={card} />
+                </S.Item>
+                )
         }));
+        setIsLoading(false);
     }, [listCardState])
     
-
     return(
         <S.List>
             {isLoading ? (
