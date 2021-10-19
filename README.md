@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# AMIIBO-INFOS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Descrição 📄
 
-## Available Scripts
+O projeto desenvolvido é responsável por consumir uma API que armazena informações sobre os Amiibo, com ela a aplicação consegue fornecer de uma forma simples a visualização dos dados necessários sobre o assunto, desde a visualização das imagens do Amiibo até o seu uso em todos os jogos compatíveis.
+O desenvolvimento foi focado no uso do React, e só foi possível graças a ajuda da Digital Innovation One e Matheus Benites.
 
-In the project directory, you can run:
+#### O que são os Amiibo? 🎮
 
-### `yarn start`
+Os amiibo são cartões e figuras interativos que podes utilizar com jogos compatíveis. Se introduzires um amiibo em jogos para a Nintendo 3DS, Wii U ou Nintendo Switch compatíveis, descobrirás uma quantidade de surpresas! Os amiibo desempenham papéis diferentes consoante o jogo em que são utilizados, dando-te a possibilidade de desbloquear novos modos, armas e opções de personalização ou até de aumentar as habilidades das tuas personagens para fazeres delas aliados...ou adversários a temer!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Como executar na minha máquina? 🧑‍🔧
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Instalar dependências
+- executar o comando yarn
 
-### `yarn test`
+Comandos para executar o projeto no local como modo de produção
+- executar yarn dev
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### API utilizada ⚙️
 
-### `yarn build`
+https://amiiboapi.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Heroku 🔗
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://amiibo-infos.herokuapp.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Sobre mim 👨‍🎓
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+https://github.com/NGustavo011/sobre-mim
