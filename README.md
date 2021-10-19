@@ -14,7 +14,7 @@ Os amiibo são cartões e figuras interativos que podes utilizar com jogos compa
 Instalar dependências
 - executar o comando yarn
 
-Comandos para executar o projeto no local como modo de produção
+Comandos para executar o projeto no local
 - executar yarn dev
 
 #### API utilizada ⚙️
